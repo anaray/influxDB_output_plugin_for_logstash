@@ -22,8 +22,6 @@ class LogStash::Outputs::InfluxDB < LogStash::Outputs::Base
   public
   def receive(event)
     return unless output?(event)
-    puts "event from influxdb .."
-    #puts event.to_hash
-    puts "Username > #{@username}"
+    @influxdb.write_point(@series_name, event.to_hash)
   end
 end
