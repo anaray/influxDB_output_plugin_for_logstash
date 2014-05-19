@@ -6,13 +6,13 @@ Usage in logstash conf file
 ```
 output { 
   influxdb{
-      hostname => "localhost"
-      username => "root"
-      password => "root"
-      database => "mlogs"
-      series_name => "log_t_series"
-      time_field => "date_time"
-      time_precision => 's'
+      hostname => "localhost"  # string, default: "localhost"
+      username => "root"  # string
+      password => "root"  # string
+      database => "mlogs" # string
+      series_name => "log_t_series" #string
+      time_field => "date_time"  # string (optional)
+      time_precision => 's'  # string (optional)  
   }
 }
 ```
